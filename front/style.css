@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 650px;
+    height: 800px;
+    background: rgb(184, 184, 184);
+    border-radius: 15px;
+    padding: 45px 60px;
+    display: grid;
+    grid-template-rows: 66px 711px;
+    gap: 22px;
+}
+
+.app__controls {
+    display: grid;
+    grid-template-columns: auto 160px;
+}
+
+.app__controls-input {
+    border: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 18px;  /*!размер шрифта на ввод */
+    padding: 5px 10px; /*! сверху снизу 5 , слева справа 10*/
+}
+
+.app__controls-input:focus-visible {
+    outline: none;
+}
+
+.app__controls-button { 
+    border: none; /*!всё что связано с самой кнопкой добавить */
+    border-radius: 0 10px 10px 0;
+    background: rgb(255, 214, 90);
+    font-size: 18px;
+}
+
+.app__list {
+    background-color: whitesmoke; /*! белый фон под иконками задач*/ 
+    border-radius: 15px;
+    padding: 20px; /*!отступ от края белого фона до задачи */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto; /*! скролл при нехватки места для задач*/
+}
+
+.app__list-item {
+    background: rgb(255, 185, 185);
+    display: flex;
+    align-items: center; /*! элементы в кнопке задачи по центральной горизонтали*/
+    justify-content: space-between; /*! растягивает элементы задачи (галочка слева, мусорка справа, текст занимает всю середину)*/
+    gap: 10px; /*!расстояние между галочкой и текстом задачи */
+    padding: 30px 20px; /*! пространство красное (свеху-снизу текста задачи 30, слева-справа 20)*/
+    border-radius: 5px;
+}
+
+.app__list-button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.app__list-button:hover {
+    background: rgb(255, 35, 35) /*! подсвечивает трэш при наведении мышью*/
+}
+
+.app__list-checkbox {
+    width: 20px;  /*! размер клетки для галочки */
+    height: 20px;
+}
+
+.app__list-item-text {
+    margin: 0;
+    flex-grow: 1; /*! чтобы текст в задаче прилип к галочке*/
+    font-size: 18px;
+}
+
+.app__list-item_done {
+    background: rgb(185, 255, 185);
+    text-decoration: line-through;
+}
+
+button:hover {
+    cursor: pointer; /*!чтобы не ловить иконку - для простого нажатия удаления задачи */
+}
