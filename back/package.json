@@ -1,5 +1,5 @@
 {
-  "name": "vscode",
+  "name": "back",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@types/node": "^22.7.6"
+    "@types/node": "^22.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
