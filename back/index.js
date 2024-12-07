@@ -13,7 +13,7 @@ const server = createServer((req, res) => {
   const method = req.method
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3001');
+  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
 
   if (url === '/tasks' && method === 'POST') {
     let body = [];
@@ -27,6 +27,10 @@ const server = createServer((req, res) => {
       console.log(result);
       res.end(result)
     });
+  }
+  if (method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+    res.end();
   }
 
   // TODO Change Status
